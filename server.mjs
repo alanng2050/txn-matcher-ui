@@ -11,7 +11,7 @@ const fastify = Fastify({
 // fastify.register(fastifyStatic, { root: rootDir, prefix: '/' })
 fastify.register(fastifyHelmet)
 
-const port = parseInt(process.env.PORT || '3011', 10)
+const port = parseInt(process.env.PORT, 10) || 3012
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -25,5 +25,5 @@ fastify.all('*', (req, reply) => {
 
 fastify.listen({ port }, (err) => {
   if (err) console.error(err)
-  else console.log('listening on 3000')
+  else console.log(`listening on ${port}`)
 })

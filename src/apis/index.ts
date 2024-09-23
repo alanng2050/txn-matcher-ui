@@ -11,9 +11,9 @@ export const queryClient = new QueryClient({
 })
 
 export const useData = () => {
-  return useQuery({
+  return useQuery<{ orders: Order[]; transactions: Transaction[] }>({
     queryKey: ['getdata'],
-    queryFn: () => {
+    queryFn: async () => {
       return fetch('/api/data').then((res) => res.json())
     },
   })

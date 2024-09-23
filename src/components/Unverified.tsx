@@ -21,7 +21,7 @@ export const Unverified = () => {
     setUpdateData((prev) => ({ ...prev, [txId]: orderId }))
   }
   const { data } = useData()
-  const list = data?.transactions?.filter((item: any) => !item.verifiedId)
+  const list = data?.transactions?.filter((item) => !item.verifiedId)
 
   const onSave = () => {
     fetch('/api/update', {
@@ -53,7 +53,7 @@ export const Unverified = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {list?.map((item: any) => {
+            {list?.map((item) => {
               return (
                 <Fragment key={item.id}>
                   <Tr>
@@ -71,7 +71,7 @@ export const Unverified = () => {
                         }}
                       >
                         <option>Select</option>
-                        {data?.orders?.map((order: any) => (
+                        {data?.orders?.map((order) => (
                           <option value={order.id} key={order.id}>
                             {order.customerName}({order.id})
                             {item.suggestedOrderIds?.includes(order.id)

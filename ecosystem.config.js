@@ -5,6 +5,7 @@ module.exports = {
       script: 'server.mjs',
       env: {
         NODE_ENV: 'production',
+        PORT: 3012,
       },
     },
   ],

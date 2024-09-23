@@ -17,6 +17,7 @@ export const List = () => {
   const { data } = useData()
   const modalToggle = useDisclosure()
   const [viewId, setViewId] = useState('')
+
   return (
     <>
       <Transactions {...modalToggle} viewId={viewId} />
@@ -33,7 +34,7 @@ export const List = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {data?.orders?.map((order: any) => {
+            {data?.orders?.map((order) => {
               return (
                 <Fragment key={order.id}>
                   <Tr>

@@ -24,9 +24,7 @@ export const Transactions = ({
   viewId?: string
 }) => {
   const { data } = useData()
-  const list = data?.transactions?.filter(
-    (item: any) => item.verifiedId === viewId
-  )
+  const list = data?.transactions?.filter((item) => item.verifiedId === viewId)
 
   return (
     <Modal size="xl" isOpen={isOpen} onClose={onClose}>
@@ -44,7 +42,7 @@ export const Transactions = ({
                 </Tr>
               </Thead>
               <Tbody>
-                {list?.map((item: any) => {
+                {list?.map((item) => {
                   return (
                     <Fragment key={item.id}>
                       <Tr>
